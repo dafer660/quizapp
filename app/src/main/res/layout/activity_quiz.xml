@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dafer.android.quizapp.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="20dp"
+        android:paddingLeft="10dp"
+        android:paddingBottom="20dp"
+        android:paddingRight="10dp"
+        android:id="@+id/quizGroup"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <TextView
+            android:id="@+id/q1_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Question 1: What is the maximum speed of a Cat5e Network Cable?"
+            android:layout_alignParentTop="true" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:id="@+id/q1_quiz"
+            android:layout_below="@id/q1_textview">
+
+            <RadioButton
+                android:id="@+id/q1_radioA"
+                android:text="10 Mb/s"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"/>
+
+            <RadioButton
+                android:id="@+id/q1_radioB"
+                android:text="100 Mb/s"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/q1_radioA"/>
+
+            <RadioButton
+                android:id="@+id/q1_radioC"
+                android:text="1000 Mb/s"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/q1_radioB"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/q2_textview"
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Question 2: What common Fiber Connectors (select all that apply)?"
+            android:layout_below="@id/q1_quiz"/>
+
+        <CheckBox
+            android:id="@+id/q2_checkbox1"
+            android:text="Straight Tip Connector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/q2_textview"/>
+
+        <CheckBox
+            android:id="@+id/q2_checkbox2"
+            android:text="Subscriber Connector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/q2_checkbox1"/>
+
+        <CheckBox
+            android:id="@+id/q2_checkbox3"
+            android:text="F-Connector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/q2_checkbox2"/>
+
+        <CheckBox
+            android:id="@+id/q2_checkbox4"
+            android:text="Lucent Connector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/q2_checkbox3"/>
+
+        <TextView
+            android:id="@+id/q3_textview"
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Question 3: Are fiber connections affected by RF interference?"
+            android:layout_below="@id/q2_checkbox4"/>
+
+        <RadioGroup
+            android:id="@+id/q3_checkboxes"
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/q3_textview">
+
+            <RadioButton
+                android:id="@+id/q3_radioA"
+                android:text="Yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true" />
+
+            <RadioButton
+                android:id="@+id/q3_radioB"
+                android:text="No"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/q4_textview"
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Question 4: What is the proper subnet mask for a Class C address?"
+            android:layout_below="@id/q3_checkboxes"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/q4_textview"
+            android:id="@+id/q4_edit_text"
+            android:paddingTop="10dp"
+            android:inputType="text">
+         </EditText>
+
+        <TextView
+            android:id="@+id/q5_textview"
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Question 5: What does TCP stands for?"
+            android:layout_below="@id/q4_edit_text"/>
+
+        <EditText
+            android:id="@+id/q5_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/q5_textview"
+            android:paddingTop="10dp"
+            android:inputType="text">
+        </EditText>
+
+        <TextView
+            android:layout_below="@id/q5_edit_text"
+            android:id="@+id/q6_textview"
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Question 6: What is the maximum speed for 802.11n per stream for Wireless Networking?" />
+
+        <RadioGroup
+            android:id="@+id/q6_radioboxes"
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/q6_textview">
+
+            <RadioButton
+                android:id="@+id/q6_radioA"
+                android:text="54 Mb/s"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true" />
+
+            <RadioButton
+                android:id="@+id/q6_radioB"
+                android:text="150 Mb/s"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true" />
+
+            <RadioButton
+                android:id="@+id/q6_radioC"
+                android:text="11 Mb/s"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/q7_textview"
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Question 7: What is the class of Fire Extinguisher to be used on Electronics?"
+            android:layout_below="@id/q6_radioboxes"/>
+
+        <RadioGroup
+            android:id="@+id/q7_radioboxes"
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/q7_textview">
+
+            <RadioButton
+                android:id="@+id/q7_radioA"
+                android:text="Class A"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true" />
+
+            <RadioButton
+                android:id="@+id/q7_radioB"
+                android:text="Class B"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true" />
+
+            <RadioButton
+                android:id="@+id/q7_radioC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="Class C" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/q8_textview"
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Question 8: What is the protocol used for the PING command?"
+            android:layout_below="@id/q7_radioboxes"/>
+
+        <EditText
+            android:id="@+id/q8_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/q8_textview"
+            android:paddingTop="10dp"
+            android:hint="use abbreviation or long name"
+            android:inputType="text">
+        </EditText>
+
+        <TextView
+            android:id="@+id/q9_textview"
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Question 9: What is the name of Windows 8 User Interface?"
+            android:layout_below="@id/q8_edit_text"/>
+
+        <EditText
+            android:id="@+id/q9_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/q9_textview"
+            android:paddingTop="10dp"
+            android:inputType="text">
+        </EditText>
+
+        <TextView
+            android:id="@+id/q10_textview"
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Question 10: What are the known types of RAID (select all that apply)?"
+            android:layout_below="@id/q9_edit_text"/>
+
+        <CheckBox
+            android:id="@+id/q10_checkbox1"
+            android:text="RAID 0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/q10_textview"/>
+
+        <CheckBox
+            android:id="@+id/q10_checkbox2"
+            android:text="RAID 5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/q10_checkbox1"/>
+
+        <CheckBox
+            android:id="@+id/q10_checkbox3"
+            android:text="RAID 10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/q10_checkbox2"/>
+
+        <CheckBox
+            android:id="@+id/q10_checkbox4"
+            android:text="RAID 12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/q10_checkbox3"
+            android:paddingBottom="10dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="30dp"
+            android:layout_below="@id/q10_checkbox4"
+            android:text="Submit Answers"
+            android:onClick="submitQuiz"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+
+</ScrollView>
