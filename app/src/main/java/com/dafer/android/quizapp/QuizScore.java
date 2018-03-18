@@ -23,14 +23,16 @@ public class QuizScore extends AppCompatActivity{
         Button tryAgainButton = findViewById(R.id.try_again_button);
 
         if (score < 75) {
-            finalScore.setText("You didn't pass the quiz...\nYou should study more and try again!\nYour final score was: " + score + "%\n"
-                    + finalMsg);
+            finalScore.setText(String.format("You didn't pass the quiz...\n" +
+                    "You should study more and try again!\n" +
+                    "Your final score was: %d%%\n%s", score, finalMsg));
             tryAgainButton.setVisibility(View.VISIBLE);
             finalScore.setTextColor(Color.parseColor("#F44336"));
         }
         else {
-            finalScore.setText("Congratulations on passing the quiz!!\nYour final score was a whopping " + score + "%!!\n"
-                    + finalMsg);
+            finalScore.setText(String.format("Congratulations on passing the quiz!!\n" +
+                    "Your final score was a whopping %d%%!!\n" +
+                    "%s", score, finalMsg));
             tryAgainButton.setVisibility(View.GONE);
             finalScore.setTextColor(Color.parseColor("#FF9800"));
         }

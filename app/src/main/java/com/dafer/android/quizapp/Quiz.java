@@ -9,7 +9,6 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.RelativeLayout;
 
 public class Quiz extends AppCompatActivity{
 
@@ -29,14 +28,13 @@ public class Quiz extends AppCompatActivity{
         getCorrectAnswers(); // gets the correct answers
 
         /* Just in case we want to use the code below:
-
         String finalScore = String.valueOf(calculateScore());
         intent.putExtra("finalScore", Integer.valueOf(finalScore));
         */
 
         intent.putExtra("finalScore", calculateScore());
         intent.putExtra("incorrectText", incorrectAnswers);
-        ViewGroup group = (ViewGroup) findViewById(R.id.quizGroup);
+        ViewGroup group = findViewById(R.id.quizGroup);
 
         // Reset all the controls in the UI
         for (int i = 0, count = group.getChildCount(); i < count; ++i) {

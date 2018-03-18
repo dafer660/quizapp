@@ -1,4 +1,50 @@
 <resources>
     <string name="app_name">QuizApp</string>
+    <string name="app_title">Welcome to the CompTIA A+ Quiz!</string>
+    <string name="start_quiz">Start Quiz</string>
     <string name="quiz_score">Final Quiz Score</string>
+    <string name="try_again">Try Again</string>
+    <string name="submit_quiz">Submit Answers</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <!--Quiz Page:-->
+    <string name="q1">Question 1: What is the maximum speed of a Cat5e Network Cable?</string>
+    <string name="q1_a">10 Mb/s</string>
+    <string name="q1_b">100 Mb/s</string>
+    <string name="q1_c">1000 Mb/s</string>
+
+    <string name="q2">Question 2: What are common Fiber Connectors (select all that apply)?</string>
+    <string name="q2_a">Straight Tip Connector</string>
+    <string name="q2_b">Subscriber Connector</string>
+    <string name="q2_c">F-Connector</string>
+    <string name="q2_d">Lucent Connector</string>
+
+    <string name="q3">Question 3: Are Fiber Connections affected by RF interference?</string>
+
+    <string name="q4">Question 4: What is the standard Subnet Mask for a Class C address?</string>
+
+    <string name="q5">Question 5: What does TCP stands for?</string>
+
+    <string name="q6">Question 6: What is the maximum speed for 802.11n per stream for Wireless Networking?</string>
+    <string name="q6_a">54 Mb/s</string>
+    <string name="q6_b">150 Mb/s</string>
+    <string name="q6_c">11 Mb/s</string>
+
+    <string name="q7">Question 7: What is the class of Fire Extinguisher to be used on Electronics?</string>
+    <string name="q7_a">Class A</string>
+    <string name="q7_b">Class B</string>
+    <string name="q7_c">Class C</string>
+
+    <string name="q8">Question 8: What is the protocol used for the PING command?</string>
+    <string name="q8_hint">Use the abbreviation or the full designation</string>
+
+    <string name="q9">Question 9: What is the name of Windows 8 User Interface?</string>
+
+    <string name="q10">Question 10: What are the known types of RAID (select all that apply)?</string>
+    <string name="q10_a">RAID 0</string>
+    <string name="q10_b">RAID 5</string>
+    <string name="q10_c">RAID 10</string>
+    <string name="q10_d">RAID 12</string>
+
 </resources>
