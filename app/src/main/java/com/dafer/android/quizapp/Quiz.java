@@ -1,6 +1,6 @@
 package com.dafer.android.quizapp;
 
-import android.content.Intent;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,6 +9,8 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.ScrollView;
+import android.widget.Toast;
 
 public class Quiz extends AppCompatActivity{
 
@@ -22,7 +24,9 @@ public class Quiz extends AppCompatActivity{
     }
 
     public void submitQuiz(View v) {
-        Intent intent = new Intent(Quiz.this, QuizScore.class);
+
+        //Intent intent = new Intent(Quiz.this, QuizScore.class);
+
         correctAnswers = 0; // reset the correctAnswers to 0
         incorrectAnswers = ""; // reset incorrectAnswers text to an empty string
         getCorrectAnswers(); // gets the correct answers
@@ -30,11 +34,19 @@ public class Quiz extends AppCompatActivity{
         /* Just in case we want to use the code below:
         String finalScore = String.valueOf(calculateScore());
         intent.putExtra("finalScore", Integer.valueOf(finalScore));
-        */
 
         intent.putExtra("finalScore", calculateScore());
         intent.putExtra("incorrectText", incorrectAnswers);
+         */
+
+        Context context = getApplicationContext();
+        int finalScore = calculateScore();
+        String finalText = getFinalToast(finalScore);
+        Toast toast = Toast.makeText(context, finalText, Toast.LENGTH_LONG);
+
         ViewGroup group = findViewById(R.id.quizGroup);
+        ScrollView scroll = findViewById(R.id.mainScroll);
+
 
         // Reset all the controls in the UI
         for (int i = 0, count = group.getChildCount(); i < count; ++i) {
@@ -49,11 +61,27 @@ public class Quiz extends AppCompatActivity{
                 ((RadioGroup) view).clearCheck();
             }
         }
-        startActivity(intent);
+
+        scroll.scrollTo(0, 0);
+        toast.show();
+
+        //startActivity(intent);
     }
 
     private int calculateScore(){
         return correctAnswers * 100 / 10;
+    }
+
+    private String getFinalToast(int score){
+        if (score < 75) {
+            return("You didn't pass the quiz...\n" +
+                    "Your final score was: " + score + "%");
+        }
+        else {
+            return("Congratulations on passing the quiz!!\n" +
+                    "Your final score was: " + score + "%");
+        }
+
     }
 
     private void getCorrectAnswers(){
@@ -82,9 +110,10 @@ public class Quiz extends AppCompatActivity{
     private void q2() {
         CheckBox chk1Q2 = findViewById(R.id.q2_checkbox1);
         CheckBox chk2Q2 = findViewById(R.id.q2_checkbox2);
-        CheckBox chk4Q2 = findViewById(R.id.q2_checkbox4);
+        CheckBox chk2Q3 = findViewById(R.id.q2_checkbox3);
+        CheckBox chk2Q4 = findViewById(R.id.q2_checkbox4);
 
-        if (chk1Q2.isChecked() && chk2Q2.isChecked() && chk4Q2.isChecked()){
+        if (chk1Q2.isChecked() && chk2Q2.isChecked() && !chk2Q3.isChecked() && chk2Q4.isChecked()){
             correctAnswers++;
         }
         else {
@@ -104,7 +133,7 @@ public class Quiz extends AppCompatActivity{
 
     private void q4() {
         EditText editTextQ4 = findViewById(R.id.q4_edit_text);
-        if (editTextQ4.getText().toString().equals("255.255.255.0")){
+        if (editTextQ4.getText().toString().equalsIgnoreCase("255.255.255.0")){
             correctAnswers++;
         }
         else {
@@ -114,7 +143,7 @@ public class Quiz extends AppCompatActivity{
 
     private void q5() {
         EditText editTextQ5 = findViewById(R.id.q5_edit_text);
-        if (editTextQ5.getText().toString().toLowerCase().equals("transmission control protocol")) {
+        if (editTextQ5.getText().toString().equalsIgnoreCase("transmission control protocol")) {
             correctAnswers++;
         }
         else {
@@ -144,8 +173,8 @@ public class Quiz extends AppCompatActivity{
 
     private void q8() {
         EditText editTextQ8 = findViewById(R.id.q8_edit_text);
-        String textQ8 = editTextQ8.getText().toString().toLowerCase();
-        if (textQ8.equals("icmp") || textQ8.equals("internet control message protocol")) {
+        String txtQ8 = editTextQ8.getText().toString();
+        if (txtQ8.equalsIgnoreCase("icmp") || txtQ8.equalsIgnoreCase("internet control message protocol")) {
             correctAnswers++;
         }
         else {
@@ -155,8 +184,7 @@ public class Quiz extends AppCompatActivity{
 
     private void q9() {
         EditText editTextQ9 = findViewById(R.id.q9_edit_text);
-        String textQ8 = editTextQ9.getText().toString().toLowerCase();
-        if (textQ8.equals("metro ui")) {
+        if (editTextQ9.getText().toString().equalsIgnoreCase("metro ui")) {
             correctAnswers++;
         }
         else {
@@ -168,8 +196,9 @@ public class Quiz extends AppCompatActivity{
         CheckBox chk1Q10 = findViewById(R.id.q10_checkbox1);
         CheckBox chk2Q10 = findViewById(R.id.q10_checkbox2);
         CheckBox chk3Q10 = findViewById(R.id.q10_checkbox3);
+        CheckBox chk4Q10 = findViewById(R.id.q10_checkbox4);
 
-        if (chk1Q10.isChecked() && chk2Q10.isChecked() && chk3Q10.isChecked()){
+        if (chk1Q10.isChecked() && chk2Q10.isChecked() && chk3Q10.isChecked() && !chk4Q10.isChecked()){
             correctAnswers++;
         }
         else {

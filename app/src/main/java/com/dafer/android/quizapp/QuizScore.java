@@ -15,6 +15,10 @@ public class QuizScore extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_score);
 
+        /*
+        Even though the code below will not be used, or even the class,
+        I'm keeping it for future reference.
+         */
         Intent intent = getIntent();
         int score = intent.getIntExtra("finalScore", 0);
         String finalMsg = intent.getStringExtra("incorrectText");

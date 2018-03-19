@@ -17,5 +17,5 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Quiz.class);
         startActivity(intent);
     }
-    
+
 }
