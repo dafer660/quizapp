@@ -47,6 +47,7 @@ public class Quiz extends AppCompatActivity{
         ViewGroup group = findViewById(R.id.quizGroup);
         ScrollView scroll = findViewById(R.id.mainScroll);
 
+        
 
         // Reset all the controls in the UI
         for (int i = 0, count = group.getChildCount(); i < count; ++i) {
